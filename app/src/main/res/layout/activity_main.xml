@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
+<!--    因为是horizontal的linearlayout，所以weight等于1且不设置height的时候这个纵向距离就会占满parent剩下的空间-->
+<!--    可以通过缩紧或者看标签层级看父级或者子级-->
+<!--    TinNews的topbar是系统放上去的-->
+<!--    最下面三行就是在container里引入了这个graph，并赋予了name（一般是class名，也相当于他的controller）-->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/bottom_nav_menu" />
+    <!--        icon本身是没颜色的，这里用iconTint给了他一个白色-->
+<!--    最下面一行引入了bottom nav menu这个xml-->
+
+</LinearLayout>

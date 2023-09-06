@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<!--    这个文件里存放的是app对外的表演形式-->
+<!--    app需要向系统ask一个connect internet的能力，因此这个索取的能力也要放到这-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+<!--    第一行赋予了app name，则这一个class就代表了整个app，他的创建消亡就代表app创建消亡，告诉系统用这个class来启动。并且写了这个才能连上写在此文件里的database-->
+    <application
+        android:name=".TinNewsApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TinNews"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+    </application>
+
+</manifest>
